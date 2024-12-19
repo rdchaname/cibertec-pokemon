@@ -3,19 +3,17 @@
 import { useState } from "react";
 
 export const AgregarPokemon = ({ onNuevoPokemon }) => {
-  const [valorInput, setValorInput] = useState("charizard");
-
-  const manejarSubmit = (e) => {
-    e.preventDefault();
-    if (valorInput.trim().length <= 1) return;
-    onNuevoPokemon(valorInput.trim().toLowerCase());
-    setValorInput("");
-  };
+  const [valorInput, setValorInput] = useState("pikachu");
 
   return (
     <>
       <form
-        onSubmit={manejarSubmit}
+        onSubmit={(e) => {
+            e.preventDefault();
+          if (valorInput.trim().length <= 1) return;
+          onNuevoPokemon(valorInput.trim().toLowerCase());
+          setValorInput("");
+        }}
       >
         <input
           type="text"

@@ -7,27 +7,29 @@ import { ListaPokemon } from "./components/ListaPokemon";
 import { useState } from "react";
 
 export const PokemonApp = () => {
-  const [pokemons, setPokemons] = useState(["ditto", "pikachu"]);
+  const [pokemons, setPokemons] = useState(["pikachu", "squirtle"]);
 
   console.log(pokemons);
 
   const onAgregarPokemon = (pokemon) => {
     if (pokemons.includes(pokemon)) return;
+
     setPokemons([pokemon, ...pokemons]);
-  }
+  };
 
   return (
     <>
       <h1></h1>
       <div className="container">
         <Cabecera />
-        <AgregarPokemon onNuevoPokemon={onAgregarPokemon} />
+        <AgregarPokemon onNuevoPokemon={(event) => onAgregarPokemon(event)} />
         <div className="row">
-          {
-            pokemons.map(pokemon => { return <ListaPokemon key={pokemon} pokemon={pokemon} /> })
-          }
-          <Footer />
+          {pokemons.map((pokemon) => {
+            return <ListaPokemon key={pokemon} pokemon={pokemon} />;
+          })}
         </div>
+
+        <Footer />
       </div>
     </>
   );

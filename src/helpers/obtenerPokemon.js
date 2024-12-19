@@ -1,4 +1,4 @@
-export const obtenerPokemon = async (pokemon) => {
+export const obtenerPokemones = async (pokemon) => {
   const url = `https://pokeapi.co/api/v2/pokemon/${pokemon}`;
   const resp = await fetch(url);
 
