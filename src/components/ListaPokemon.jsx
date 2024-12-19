@@ -20,27 +20,19 @@ export const ListaPokemon = ({ pokemon }) => {
   return (<>
 
     <div className="col-md-4">
-
       <h3>{pokemon}</h3>
-
       <div className="card">
         <img className="card-img-top" src={imagenes.imgSrc} />
         <div className="card-body">
           <h5 className="card-title">{imagenes.type}</h5>
         </div>
       </div>
-
       <ul>
         <li><img src={imagenes.imgSrc} /></li>
         <li> {imagenes.attack}</li>
         <li> {imagenes.defense}</li>
-
       </ul>
-
     </div>
-
-
-
   </>)
 
 };

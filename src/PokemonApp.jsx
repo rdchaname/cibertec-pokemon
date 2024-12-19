@@ -22,12 +22,12 @@ export const PokemonApp = () => {
       <div className="container">
         <Cabecera />
         <AgregarPokemon onNuevoPokemon={onAgregarPokemon} />
-        <ol>
+        <div className="row">
           {
             pokemons.map(pokemon => { return <ListaPokemon key={pokemon} pokemon={pokemon} /> })
           }
-        </ol>
-        <Footer />
+          <Footer />
+        </div>
       </div>
     </>
   );
